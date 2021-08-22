@@ -1,23 +1,24 @@
-# Acer Aspire VX15 Hackintosh
+# Asus Vivobook Flip TP501UQK Opencore Hackintosh 
 
-![image](https://user-images.githubusercontent.com/37587399/108298022-cfe49d80-71ce-11eb-91a0-dbdd63a06604.png)
+![Screen Shot](https://user-images.githubusercontent.com/39181234/130348561-5d96e473-640b-4456-8d2d-ac06dee89667.png)
+
 | Specs | Details |
 |------------|-------------------------------|
-| Model| Acer Aspire VX15 (VX5-591G) |
-| OpenCore | 0.7.0 |
-| OS | macOS Big Sur 11.2 |
-| CPU | Intel(R) Core(TM) i5 7300HQ |
-| RAM | 16 GB DDR4 2400MHz |
-| iGPU | Intel HD Graphics 630 |
-| dGPU | NVIDIA GeForce GTX 1050M |
-| Touchpad | ELAN 0501 ( PS2-Basic and I2C-Advanced ) |
-| Wireless | Replace with BCM94360CS2 + Adapter |
+| Model| Asus Vivobook Flip TP501UQK |
+| OpenCore | 0.7.2 |
+| OS | macOS Big Sur 11.5.2 |
+| CPU | Intel(R) Core(TM) i7 7500U |
+| RAM | 12 GB DDR4 2133MHz |
+| iGPU | Intel HD Graphics 620 |
+| dGPU | NVIDIA GeForce 940MX |
+| Touchpad | ELAN |
+| Wireless | Intel AC 8260 NGW |
 | Audio | ALC255 |
 
 
 __Tested and working__
 
-- [x] Intel HD Graphics 630
+- [x] Intel HD Graphics 620
 - [x] USB 3.0, USB C
 - [x] Webcam
 - [x] LAN
@@ -25,19 +26,17 @@ __Tested and working__
 - [x] Battery status
 - [x] Sleep/Wake
 - [x] TouchPad with gestures
-- [x] WiFi + Bluetooth (You need to replace another wireless card)
-- [x] HDMI + HDMI Audio
-- [x] Airdrop + Handoff
-- [x] Audio + Headphone + Internal Mic (Should use Boom 3D to increase sound volume)
-- [x] Keyboard with backlight (Some function keys not work)
-- [x] iServices (Native when sign-in my icloud)
+- [x] WiFi + Bluetooth
+- [x] HDMI
+- [x] Audio + Headphone + Internal Mic 
+- [x] Keyboard 
+- [x] iServices (Asked for sign in, then works fine ig)
 
 __Not working__
 
 - [ ] NVIDIA GeForce GTX 1050M
 - [ ] DRM
 - [ ] SD Card reader
-- [ ] and a few other minor bugs
 
 
 
@@ -46,17 +45,16 @@ __Not working__
 
 __BIOS Settings (Version 1.08)__
 
-- Set Supervisor Password
-- Disable Password on Boot
 - Disable Secure Boot
-- Set touchpad: Advance
+- Disable Vt-d
 
 
 __OpenCore config__
 
-- Follow these instructions to configure your OpenCore: https://dortania.github.io/OpenCore-Install-Guide/  
+- Follow these instructions to configure your OpenCore: https://dortania.github.io/OpenCore-Install-Guide/
+- Modifying SSDTs : https://dortania.github.io/Getting-Started-With-ACPI/  
 - ACPI Hotpatch: https://github.com/daliansky/OC-little  
-- Audio layout ID 29 or 3 or 31 
+- Audio layout ID 13
 
 
 __USB Mapping__
@@ -69,7 +67,7 @@ __USB Mapping__
 __Fix HDMI audio__
 
 - Patch framebuffer: https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
-- Add kext: `FakePCIID.kext` (kext at this repo)  
+- Add kext: `FakePCIID.kext` (Not Tested, works acc to [vacnex](https://github.com/vacnex/VX5-591G-OpenCore))
 
 __Fix iServices__
 
@@ -104,16 +102,9 @@ And at `Root > ACPI > Patch`:
 
 __Fix Dual Boot__
 
-I use macos and window 10 on the same ssd  
+I use macos and window 10 on different drives. When I installed Windows, it automatically placed the boot folder in Opencore Partition, so it is autodected.
 
-![partition](https://i.imgur.com/GZlZPH2l.png)
-
-
-In my case, windows 10 was installed earlier so I **must** place mac partition in between efi partition and windows partition
-
-|First EFI partition|Second is Macos partition|Last Windows partition|
-| ------------ | ------------ | ------------ |
-
+If it doesn't work for you follow below as written by [vacnex](https://github.com/vacnex/VX5-591G-OpenCore)
 
 To dual boot mac and windows you should change `\EFI\Microsoft\Boot\bootmgfw.efi` to `\EFI\Microsoft\Boot\bootmgfw-orig.efi`
 Then OC should be detect your winows 10 efi in Boot menu
@@ -157,7 +148,7 @@ Then OC should be detect your winows 10 efi in Boot menu
   |Arguments|String|    
   |Path|String| **Your EFI Device String**/\EFI\Microsoft\Boot\bootmgfw-orig.efi|
   
-  As an example, this is my Path string:
+  As an example, this is vacnex's Path string:
   
   >`PciRoot(0x0)/Pci(0x17,0x0)/Sata(0x0,0x0,0x0)/HD(1,GPT,000001B3-2A80-3AAD-A6DE-D50166030000,0x800,0x64000) /\EFI\Microsoft\Boot\bootmgfw-orig.efi`
   
@@ -174,4 +165,4 @@ https://www.tonymacx86.com/threads/fix-incorrect-time-in-windows-osx-dual-boot.1
 
 
 ## Credits
-Thanks to Acidanthera, RehabMan, dortania, alexandred, daliansky, dongcodebmt
+Thanks to Vacnex, Acidanthera, RehabMan, dortania, alexandred, daliansky, dongcodebmt
