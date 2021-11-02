@@ -5,8 +5,8 @@
 | Specs | Details |
 |------------|-------------------------------|
 | Model| Asus Vivobook Flip TP501UQK |
-| OpenCore | 0.7.2 |
-| OS | macOS Big Sur 11.5.2 |
+| OpenCore | 0.7.5 |
+| OS | macOS Monterey 12.0 |
 | CPU | Intel(R) Core(TM) i7 7500U |
 | RAM | 12 GB DDR4 2133MHz |
 | iGPU | Intel HD Graphics 620 |
