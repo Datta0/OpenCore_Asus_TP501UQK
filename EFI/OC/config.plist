@@ -8,22 +8,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Fake Brightness Sensor</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-ALS0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Fix Brightness Key</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-BKEY.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Add DMAC</string>
 				<key>Enabled</key>
 				<true/>
@@ -40,35 +24,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix Sleep</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-GPRW.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Fix IPIC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-IPIC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Add MCHC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-MCHC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Add MEM2</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-MEM2.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -96,14 +56,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix RTC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-RTC0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Add SBUS</string>
 				<key>Enabled</key>
 				<true/>
@@ -120,27 +72,75 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fix USB Power</string>
+				<string>SSDT-NVIDIA.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-NVIDIA.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-ALS0.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-ALS0.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-HPETF.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-HPETF.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-MCHC.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-MCHC.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-MEM2.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-MEM2.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-GPRW.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-GPRW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-BKEY.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-BKEY.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-RTC0.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-RTC0.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-USBX.aml</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-USBX.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-NVIDIA.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-NVIDIA.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-HPETF.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-HPETF.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -153,13 +153,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>Rename Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml (Instant Wake)</string>
+				<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>R1BSVwI=</data>
+				<data>T1NJRA==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -167,7 +167,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>WFBSVwI=</data>
+				<data>WFNJRA==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -183,13 +183,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>_Q11 to XQ11 (Brightness Down)</string>
+				<string>change _OSI to XOSI</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>X1ExMQ==</data>
+				<data>X09TSQ==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -197,7 +197,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>WFExMQ==</data>
+				<data>WE9TSQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -213,13 +213,13 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>_Q12 to XQ12 (Brightness Up)</string>
+				<string>change HECI to IMEI</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>X1ExMg==</data>
+				<data>SEVDSQ==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -227,7 +227,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>WFExMg==</data>
+				<data>SU1FSQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -300,6 +300,8 @@
 			<false/>
 			<key>SyncRuntimePermissions</key>
 			<false/>
+			<key>ResizeAppleGpuBars</key>
+			<integer>-1</integer>
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
@@ -319,24 +321,34 @@
 				<key>model</key>
 				<string>Sunrise Point-LP HD Audio</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x2,0x0) blankqwq/asus-fl5900u-hackintosh</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AAAWWQ==</data>
+				<data>AAAbWQ==</data>
 				<key>AAPL,slot-name</key>
-				<string>Internal</string>
-				<key>device-id</key>
-				<data>FlkAAA==</data>
+				<string>Internal@0,2,0</string>
 				<key>force-online</key>
 				<data>AQAAAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel HD Graphics 620</string>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
-				<key>enable-hdmi20</key>
+				<key>framebuffer-fbmem</key>
+				<data>AABAAg==</data>
+				<key>framebuffer-stolenmem</key>
+				<data>AABQAQ==</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>AAAAgA==</data>
+				<key>framebuffer-con0-enable</key>
 				<data>AQAAAA==</data>
+				<key>framebuffer-con0-alldata</key>
+				<data>AAAIAAIAAACYAAAA</data>
+				<key>framebuffer-con2-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con2-alldata</key>
+				<data>AgQKAAAEAACHAQAA</data>
+				<key>framebuffer-con3-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con3-alldata</key>
+				<data>AwYKAAAEAACHAQAA</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -970,23 +982,17 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
-			<key>SerialInit</key>
-			<false/>
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>0</integer>
+			<integer>67</integer>
 		</dict>
 		<key>Entries</key>
 		<array/>
 		<key>Security</key>
 		<dict>
-			<key>AllowNvramReset</key>
-			<true/>
 			<key>AllowSetDefault</key>
 			<true/>
-			<key>AllowToggleSip</key>
-			<false/>
 			<key>ApECID</key>
 			<integer>0</integer>
 			<key>AuthRestart</key>
@@ -1099,9 +1105,9 @@
 				<key>SystemAudioVolume</key>
 				<data>MA==</data>
 				<key>boot-args</key>
-				<string></string>
+				<string>-v</string>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>/w8AAA==</data>
 				<key>prev-lang:kbd</key>
 				<data>ZW4tVVM6MA==</data>
 				<key>run-efi-updater</key>
@@ -1126,8 +1132,6 @@
 				<string>csr-active-config</string>
 			</array>
 		</dict>
-		<key>LegacyEnable</key>
-		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
@@ -1196,6 +1200,8 @@
 		<true/>
 		<key>UpdateSMBIOSMode</key>
 		<string>Create</string>
+		<key>UseRawUuidEncoding</key>
+		<false/>
 	</dict>
 	<key>UEFI</key>
 	<dict>
@@ -1229,27 +1235,6 @@
 			<key>PointerSpeedMul</key>
 			<integer>1</integer>
 		</dict>
-		<key>Audio</key>
-		<dict>
-			<key>AudioCodec</key>
-			<integer>0</integer>
-			<key>AudioDevice</key>
-			<string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
-			<key>AudioOut</key>
-			<integer>0</integer>
-			<key>AudioSupport</key>
-			<true/>
-			<key>MinimumVolume</key>
-			<integer>20</integer>
-			<key>PlayChime</key>
-			<string>Auto</string>
-			<key>ResetTrafficClass</key>
-			<false/>
-			<key>SetupDelay</key>
-			<integer>0</integer>
-			<key>VolumeAmplifier</key>
-			<integer>100</integer>
-		</dict>
 		<key>ConnectDrivers</key>
 		<true/>
 		<key>Drivers</key>
@@ -1277,16 +1262,6 @@
 				<string>OpenCanopy.efi</string>
 				<key>Arguments</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>OpenLinuxBoot.efi</string>
-				<key>Arguments</key>
-				<string></string>
-				<key>Comment</key>
-				<string>OpenLinuxBoot.efi</string>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1413,6 +1388,31 @@
 		</dict>
 		<key>ReservedMemory</key>
 		<array/>
+		<key>Audio</key>
+		<dict>
+			<key>AudioCodec</key>
+			<integer>0</integer>
+			<key>AudioDevice</key>
+			<string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
+			<key>AudioOutMask</key>
+			<integer>1</integer>
+			<key>AudioSupport</key>
+			<false/>
+			<key>DisconnectHda</key>
+			<false/>
+			<key>MaximumGain</key>
+			<integer>-15</integer>
+			<key>MinimumAssistGain</key>
+			<integer>-30</integer>
+			<key>MinimumAudibleGain</key>
+			<integer>-55</integer>
+			<key>PlayChime</key>
+			<string>Auto</string>
+			<key>ResetTrafficClass</key>
+			<false/>
+			<key>SetupDelay</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>
